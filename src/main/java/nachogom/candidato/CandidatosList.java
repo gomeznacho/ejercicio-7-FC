@@ -24,6 +24,16 @@ public class CandidatosList {
         return porCiudad;
     }
 
+    public ArrayList<Candidato> filtrarPresen(String presencialidad){
+        ArrayList<Candidato> porPresencialidad = new ArrayList<>();
+        for(Candidato c : CandidatosRepo.candidatosRepository){
+            if(c.getPresencialidad().toString().contains(presencialidad))
+                porPresencialidad.add(c);
+        }
+
+        return porPresencialidad;
+    }
+
     public ArrayList<Candidato> filtrar(Etiqueta etiqueta){
         ArrayList<Candidato> porEtiqeta = new ArrayList<>();
         for(Candidato c : CandidatosRepo.candidatosRepository) {
